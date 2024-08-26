@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get in Touch - Nazarii Dovhan</title>
+    <link rel="stylesheet" href="./getintouch.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Get in Touch</h1>
+            <p>If you have any questions or just want to say hi, feel free to contact me!</p>
+        </header>
+        <main>
+            <div class="contact-container">
+                <form id="contactForm" class="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                    
+                    
+
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2024 Nazarii Dovhan. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            const mailtoLink = `mailto:nazardov1@gmail.com?subject=Message from ${name}&body=Email: ${email}%0D%0A%0D%0AMessage: ${message}`;
+            window.location.href = mailtoLink;
+        });
+    </script>
+</body>
+</html>
